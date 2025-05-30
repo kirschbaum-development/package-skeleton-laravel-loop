@@ -31,7 +31,7 @@ You can publish the config file with:
 php artisan vendor:publish --tag=":package_slug-config"
 ```
 
-3. Register the Skeleton toolkit in your application. This is typically done in a service provider (e.g., AppServiceProvider):
+3. Register the Skeleton toolkit in your application. This is typically done in a service provider (e.g. `AppServiceProvider`):
 
 ```php
 use Kirschbaum\Loop\Loop;
