@@ -2,8 +2,8 @@
 
 namespace VendorName\Skeleton;
 
-use Kirschbaum\Loop\Concerns\Makeable;
 use Kirschbaum\Loop\Collections\ToolCollection;
+use Kirschbaum\Loop\Concerns\Makeable;
 use Kirschbaum\Loop\Contracts\Toolkit;
 use VendorName\Skeleton\SkeletonTool;
 
