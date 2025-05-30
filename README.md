@@ -14,29 +14,16 @@ This repo can be used to scaffold a Laravel package. Follow these steps to get s
 4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
 ---
 <!--/delete-->
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/:package_name.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/:package_name)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+The Laravel Loop Skeleton MCP Server is an extension for [Laravel Loop](https://github.com/kirschbaum-development/laravel-loop) that exposes your Skeleton as an MCP server.
 
 ## Installation
 
-You can install the package via composer:
+1. Make sure you have Laravel Loop installed and configured.
+
+2. You can install the package via composer:
 
 ```bash
 composer require :vendor_slug/:package_slug
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -45,25 +32,18 @@ You can publish the config file with:
 php artisan vendor:publish --tag=":package_slug-config"
 ```
 
-This is the contents of the published config file:
+3. Register the Skeleton toolkit in your application. This is typically done in a service provider (e.g., AppServiceProvider):
 
 ```php
-return [
-];
-```
+use Kirschbaum\Loop\Loop;
+use VendorName\SkeletonToolkit;
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
+Loop::toolkit(SkeletonToolkit::make());
 ```
 
 ## Usage
 
-```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
-```
+After registering the toolkit, you have to connect Laravel Loop to a MCP client, and the tools will be available.
 
 ## Testing
 
